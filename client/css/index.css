@@ -1,3 +1,11 @@
 .pusher .segment.hide {
     display: none;
 }
+
+.title-img {
+    background-image: url("/client/img/tutoringbackground.jpg");
+    background-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
