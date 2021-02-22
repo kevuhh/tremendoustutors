@@ -1,6 +1,11 @@
 $(document).ready(
     () => {
-        initializeAttributes()
+        $('.ui.sticky')
+            .sticky({
+                context: '#top'
+            });
+       // $('.ui.sticky').sticky('refresh');
+        /*initializeAttributes()
         $('.ui.sidebar')
             .sidebar({
                 context: $('.bottom.segment'),
@@ -34,12 +39,12 @@ $(document).ready(
             $('.pusher .segment').addClass('hide');
             $('.pusher .segment.meet').removeClass('hide');
             $('.pusher .segment.footer').removeClass('hide');
-        });
+        });*/
     }
 );
 
-function initializeAttributes() {
+/*function initializeAttributes() {
     $('.pusher .segment.faq').addClass('hide');
     $('.pusher .segment.schedule').addClass('hide');
     $('.pusher .segment.meet').addClass('hide');
-}
+}*/

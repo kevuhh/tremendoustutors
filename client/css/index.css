@@ -3,7 +3,19 @@
 }
 
 .title-img {
-    background-image: url("/client/img/tutoringbackground.jpg");
+    background-image: url("/client/img/tutoringbackground.png");
+    background-size: auto;
+    
+}
+.faq-img {
+    background-image: url("/client/img/faqbackground.jpg");
+    background-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.schedule-img {
+    background-image: url("/client/img/schedulebackground.png");
     background-size: auto;
     display: flex;
     align-items: center;
