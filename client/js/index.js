@@ -1,10 +1,36 @@
 $(document).ready(
     () => {
-        $('.ui.sticky')
+        /*$('.ui.sticky')
             .sticky({
                 context: '#top'
-            });
-       // $('.ui.sticky').sticky('refresh');
+            });*/
+        $('.item.home').click(() => {
+            $('.menu .item').removeClass('active');
+            $('.item.home').addClass('active');
+
+            $('.content').removeClass('hide');
+            $('.content.faq').addClass('hide');
+            $('.content.meet').addClass('hide');
+        });
+        $('.item.faq').click(() => {
+            $('.menu .item').removeClass('active');
+            $('.item.faq').addClass('active');
+
+            $('.content').removeClass('hide');
+            $('.content.home').addClass('hide');
+            $('.content.meet').addClass('hide');
+        });
+        $('.item.meet').click(() => {
+            $('.menu .item').removeClass('active');
+            $('.item.meet').addClass('active');
+
+            $('.content').removeClass('hide');
+            $('.content.home').addClass('hide');
+            $('.content.faq').addClass('hide');
+        });
+
+        
+        // $('.ui.sticky').sticky('refresh');
         /*initializeAttributes()
         $('.ui.sidebar')
             .sidebar({

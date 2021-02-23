@@ -1,12 +1,12 @@
-.pusher .segment.hide {
+.hide {
     display: none;
 }
 
-.title-img {
+.home-img {
     background-image: url("/client/img/tutoringbackground.png");
     background-size: auto;
-    
 }
+
 .faq-img {
     background-image: url("/client/img/faqbackground.jpg");
     background-size: auto;
@@ -14,8 +14,9 @@
     align-items: center;
     justify-content: center;
 }
-.schedule-img {
-    background-image: url("/client/img/schedulebackground.png");
+
+.meet-img {
+    background-image: url("/client/img/faqbackground.jpg");
     background-size: auto;
     display: flex;
     align-items: center;
