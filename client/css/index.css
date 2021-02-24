@@ -1,10 +1,28 @@
 .hide {
     display: none;
 }
+body {
+    overflow-y: hidden;
+}
+.stickToTop {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.ui.main.body {
+    height: calc(100% - 205px);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 .home-img {
     background-image: url("/client/img/tutoringbackground.png");
     background-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .faq-img {

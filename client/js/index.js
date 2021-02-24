@@ -2,7 +2,7 @@ $(document).ready(
     () => {
         /*$('.ui.sticky')
             .sticky({
-                context: '#top'
+                context: 'body'
             });*/
         $('.item.home').click(() => {
             $('.menu .item').removeClass('active');
