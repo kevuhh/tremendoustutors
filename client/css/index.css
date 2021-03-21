@@ -13,12 +13,11 @@ body {
 .ui.main.body {
     width: 100%;
     overflow-y: auto;
-    height: 100%;
 }
 
 @media screen and (min-width: 1024px) {
     .ui.main.body {
-        height: calc(100% - 205px);
+        height: calc(100% - 200px);
         width: 100%;
         overflow-y: auto;
         overflow-x: hidden;
@@ -28,13 +27,19 @@ body {
 
 @media screen and (min-width: 1024px) {
     .home-img {
-        height: 480px;
+        height: 420px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .home-img {
         height: 800px;
+    }
+    .leftSection {
+        margin: 1rem
+    }
+    .ui.main.body {
+        height: calc(100% - 200px);
     }
 }
 
