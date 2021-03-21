@@ -28,8 +28,38 @@ $(document).ready(
             $('.content.home').addClass('hide');
             $('.content.faq').addClass('hide');
         });
+        $.get("/getStats", data => {
+            const stats = data;
+            $("#sessions").text(stats.sessions);
+            $("#hours").text(stats.hours);
+            $("#tutors").text(stats.tutors);
+        });
+        $.get("/getFeed", data => {
+            const feed = data;
+            let feedHTML = '';
+            for (let i = 0; i < feed.length; i++) {
+                const {date, summary} = feed[i];
+                let eventHTML = `<div class="event">
+                <div class="label">
+                  <img src="/client/img/faqbackground.jpg">
+                </div>
+                <div class="content">
+                  <div class="date">
+                    ${date}
+                  </div>
+                  <div class="summary">
+                    ${summary}
+                  </div>
+                </div>
+              </div>`;
+                feedHTML += eventHTML;
 
-        
+            }
+            $("#feed").html(feedHTML);
+        });
+
+
+
         // $('.ui.sticky').sticky('refresh');
         /*initializeAttributes()
         $('.ui.sidebar')
