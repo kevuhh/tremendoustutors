@@ -15,6 +15,13 @@ body {
     overflow-y: auto;
 }
 
+.vertical-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 @media screen and (min-width: 1024px) {
     .ui.main.body {
         height: calc(100% - 200px);
@@ -45,7 +52,7 @@ body {
 
 .home-img {
     background-image: url("/client/img/tutoringbackground.png");
-    background-size: auto;
+    background-size: contain;
     display: flex;
     align-items: center;
     justify-content: center;
