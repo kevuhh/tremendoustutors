@@ -36,6 +36,14 @@ app.post('/tutors', (req, res) => {
 	});
 });
 
+app.post('/faqs', (req, res) => {
+	const data = req.body;
+	const faqs = JSON.parse(data.faqs);
+	fs.writeFile('./data/faqs.json', JSON.stringify(faqs), () => {
+
+	});
+});
+
 app.get('/getStats', (req, res) => {
 	const rawdata = fs.readFileSync('./data/stats.json');
 	const stats = JSON.parse(rawdata);
@@ -52,6 +60,12 @@ app.get('/getTutors', (req, res) => {
 	const rawdata = fs.readFileSync('./data/tutors.json');
 	const feed = JSON.parse(rawdata);
 	res.json(feed);
+});
+
+app.get('/getFaqs', (req, res) => {
+	const rawdata = fs.readFileSync('./data/faqs.json');
+	const faqs = JSON.parse(rawdata);
+	res.json(faqs);
 });
 
 serv.listen(2000);

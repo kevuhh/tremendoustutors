@@ -87,6 +87,21 @@ $(document).ready(
             }
             $("#tutorCards").html(tutorsHTML);
         });
+        $.get("/getFaqs", data => {
+          const faqs = data;
+          let faqsHTML = '';
+          for (let i = 0; i < faqs.length; i++) {
+              const {question, answer} = faqs[i];
+              let faqHTML = `<div class="ui raised segment faq">
+              <div class="ui medium header">${question}</div>
+              <p>
+                ${answer}
+              </p>
+            </div>`;
+              faqsHTML += faqHTML;
+          }
+          $("#faqs").html(faqsHTML);
+      });
 
 
 

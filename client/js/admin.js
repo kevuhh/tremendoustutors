@@ -17,4 +17,10 @@ $(document).ready(() => {
             console.log("success");
         });
     });
+    $("#faqs-submit").click(() => {
+        const data = { faqs: $("#faqs").val() };
+        $.post("/faqs", data, (data) => {
+            console.log("success");
+        });
+    });
 });
