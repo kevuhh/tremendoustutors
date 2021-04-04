@@ -7,6 +7,38 @@
     <link rel="icon" href="/client/img/favicon.png" sizes="16x16" type="image/png">
   </head>
   <body>
+    <div>
+      <h1>
+        How do I use the admin page?
+      </h1>
+      <h2>
+        THE ORDER ALWAYS MATTERS IN THESE FIELDS. <br>
+        NEVER PUT DOUBLE QUOTES INSIDE YOUR PROPERTIES/VALUE DOUBLE QUOTES, BECAUSE THEY CONFUSE THE JSON FORMATTING. SINGLE QUOTES ARE FINE.
+      </h2>
+      <p>
+        For sessions, hours, and tutors just enter a number (no spaces or funky business, code is like that). <br>
+        Don't leave any fields blank, though.
+      </p>
+      <h4>
+        For the rest you need to understand the JSON format, in this case it is an array [] and inside each object is identified by the {} and separated with commas.
+        For example: [{"property":"value", "property2":"value2"},{"property":"value", "property2":"value2"},{"property":"value", "property2":"value2"}] would enter three objects with two properties each with their own corresponding values.
+      </h4>
+      <p>
+        For feed, a single object needs a date property, enter the date for the value, and a summary property, enter the text for the value. If you want a hyperlink make sure to look that up, too hard to explain here. Basically it would need to be wrapped with 'a' tags. <br>
+        For example, three objects with the data needed would look like this, [{"date":"03/20/2021","summary":"You removed <a href="">Jenny Hess</a> to your <a href="">coworker</a> group."},{"date":"02/25/2021","summary":"You removed Jenny Hess to your coworker group."},{"date":"02/25/2021","summary":"You removed Jenny Hess to your coworker group."}]
+      </p>
+      <p>
+        For tutors, a single object needs a name, grade, description, favorite subject, and image file name. Image file needs to be preloaded into the server. <br>
+        For example, two objects with the data needed would look like this, [{"name":"Jane Doe","grade":"11","desc":"I like teaching","subj":"Chemistry","imgFileName":"fillerperson1.jpg"},{"name":"Cool Cam","grade":"10","desc":"I also like teaching","subj":"Math","imgFileName":"fillerperson2.jpg"}]
+      </p>
+      <p>
+        For faqs, a single object needs a question and an answer property.
+        For example, five objects with the needed data would look like this, [{"question":"Are tutoring sessions virtual or in person?","answer":"Due to the ongoing COVID-19 pandemic, all tutoring sessions are currently being held virtually (via Zoom)."},{"question":"Are the tutoring sessions a one-time thing or recurring?","answer":"They can be either! When you sign up, you can select whether you want to sign up for one session, recurring sessions, or if you are unsure!"},{"question":"Are the tutors paid or volunteers?","answer":"All tutors are high school volunteers, but they all meet the rigorous standards Tremendous Tutors sets in terms of academics and teaching experience."},{"question":"I've signed up for tutoring! Now what?","answer":"Your tutor will reach out to you shortly via email to coordinate a time that works for both of you for your session(s)."},{"question":"What subjects can you tutor in?","answer":"On the sign-up form there is an extensive list of subjects available to choose from. If you need assistance in a subject not currently listed, you can manually input the subject into the 'other' section, and we will try our best to accommodate you."}]
+      </p>
+      <h3>
+        When you click submit, nothing will happen on the admin page. However if the content did not update at all, you probably formatted wrong, or the server could be down. It's more likely you need to check your format though.
+      </h3>
+    </div>
     <form>
       <label>Sessions</label><input type="text" id="sessions" name="sessions"> <br>
       <label>Hours</label><input type="text" id="hours" name="hours"> <br>
