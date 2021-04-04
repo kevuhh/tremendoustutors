@@ -11,4 +11,10 @@ $(document).ready(() => {
             console.log("success");
         });
     });
+    $("#tutors-submit").click(() => {
+        const data = { tutors: $("#tutorCards").val() };
+        $.post("/tutors", data, (data) => {
+            console.log("success");
+        });
+    });
 });

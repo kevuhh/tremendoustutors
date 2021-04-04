@@ -28,6 +28,14 @@ app.post('/feed', (req, res) => {
 	});
 });
 
+app.post('/tutors', (req, res) => {
+	const data = req.body;
+	const tutors = JSON.parse(data.tutors);
+	fs.writeFile('./data/tutors.json', JSON.stringify(tutors), () => {
+
+	});
+});
+
 app.get('/getStats', (req, res) => {
 	const rawdata = fs.readFileSync('./data/stats.json');
 	const stats = JSON.parse(rawdata);
@@ -40,7 +48,11 @@ app.get('/getFeed', (req, res) => {
 	res.json(feed);
 });
 
-
+app.get('/getTutors', (req, res) => {
+	const rawdata = fs.readFileSync('./data/tutors.json');
+	const feed = JSON.parse(rawdata);
+	res.json(feed);
+});
 
 serv.listen(2000);
 console.log("Server started.");

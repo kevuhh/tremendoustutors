@@ -38,7 +38,7 @@ $(document).ready(
             const feed = data;
             let feedHTML = '';
             for (let i = 0; i < feed.length; i++) {
-                const {date, summary} = feed[i];
+                const { date, summary } = feed[i];
                 let eventHTML = `<div class="event">
                 <div class="label">
                   <img src="/client/img/faqbackground.jpg">
@@ -56,6 +56,36 @@ $(document).ready(
 
             }
             $("#feed").html(feedHTML);
+        });
+        $.get("/getTutors", data => {
+            const tutors = data;
+            let tutorsHTML = '';
+            for (let i = 0; i < tutors.length; i++) {
+                const { name, grade, desc, subj, imgFileName } = tutors[i];
+                let cardHTML = `
+                <div class="card">
+                <div class="image">
+                  <img src="/client/img/tutors/${imgFileName}">
+                </div>
+                <div class="content">
+                  <div class="header">${name}</div>
+                  <div class="meta">
+                    <a>Grade ${grade}</a>
+                  </div>
+                  <div class="description">
+                    ${desc}
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span>
+                    <i class="book icon"></i>
+                    ${subj}
+                  </span>
+                </div>
+              </div>`;
+                tutorsHTML += cardHTML;
+            }
+            $("#tutorCards").html(tutorsHTML);
         });
 
 
