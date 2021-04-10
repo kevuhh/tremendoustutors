@@ -1,26 +1,44 @@
 $(document).ready(() => {
     $("#stats-submit").click(() => {
+        $("#error").css("display", "none");
         const data = { sessions: $("#sessions").val(), hours: $("#hours").val(), tutors: $("#tutors").val() };
         $.post("/stats", data, (data) => {
-            console.log("success");
+            $("#sessions").val("");
+            $("#hours").val("");
+            $("#tutors").val("");
+            if (data.status === "error") {
+                $("#error").css("display", "block");
+            }
         });
     });
     $("#feed-submit").click(() => {
+        $("#error").css("display", "none");
         const data = { feed: $("#feed").val() };
         $.post("/feed", data, (data) => {
-            console.log("success");
+            $("#feed").val("");
+            if (data.status === "error") {
+                $("#error").css("display", "block");
+            }
         });
     });
     $("#tutors-submit").click(() => {
+        $("#error").css("display", "none");
         const data = { tutors: $("#tutorCards").val() };
         $.post("/tutors", data, (data) => {
-            console.log("success");
+            $("#tutorCards").val("");
+            if (data.status === "error") {
+                $("#error").css("display", "block");
+            }
         });
     });
     $("#faqs-submit").click(() => {
+        $("#error").css("display", "none");
         const data = { faqs: $("#faqs").val() };
         $.post("/faqs", data, (data) => {
-            console.log("success");
+            $("#faqs").val("");
+            if (data.status === "error") {
+                $("#error").css("display", "block");
+            }
         });
     });
 });

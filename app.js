@@ -16,31 +16,47 @@ app.use(bodyParser.raw());
 
 app.post('/stats', (req, res) => {
 	const data = req.body;
-	fs.writeFile('./data/stats.json', JSON.stringify(data), () => {
-
+	fs.writeFile('./data/stats.json', JSON.stringify(data), (err) => {
+		if (err) {
+			res.json({"status": "error"});
+		} else {
+			res.json({"status": "success"});
+		}
 	});
 });
 app.post('/feed', (req, res) => {
 	const data = req.body;
 	const feed = JSON.parse(data.feed);
-	fs.writeFile('./data/feed.json', JSON.stringify(feed), () => {
-
+	fs.writeFile('./data/feed.json', JSON.stringify(feed), (err) => {
+		if (err) {
+			res.json({"status": "error"});
+		} else {
+			res.json({"status": "success"});
+		}
 	});
 });
 
 app.post('/tutors', (req, res) => {
 	const data = req.body;
 	const tutors = JSON.parse(data.tutors);
-	fs.writeFile('./data/tutors.json', JSON.stringify(tutors), () => {
-
+	fs.writeFile('./data/tutors.json', JSON.stringify(tutors), (err) => {
+		if (err) {
+			res.json({"status": "error"});
+		} else {
+			res.json({"status": "success"});
+		}
 	});
 });
 
 app.post('/faqs', (req, res) => {
 	const data = req.body;
 	const faqs = JSON.parse(data.faqs);
-	fs.writeFile('./data/faqs.json', JSON.stringify(faqs), () => {
-
+	fs.writeFile('./data/faqs.json', JSON.stringify(faqs), (err) => {
+		if (err) {
+			res.json({"status": "error"});
+		} else {
+			res.json({"status": "success"});
+		}
 	});
 });
 
