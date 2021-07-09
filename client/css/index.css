@@ -24,7 +24,7 @@ body {
 
 @media screen and (min-width: 1024px) {
     .ui.main.body {
-        height: calc(100% - 200px);
+        height: calc(100% - 100px);
         width: 100%;
         overflow-y: auto;
         overflow-x: hidden;
@@ -46,29 +46,29 @@ body {
         margin: 1rem
     }
     .ui.main.body {
-        height: calc(100% - 200px);
+        height: calc(100% - 100px);
     }
 }
 
 .home-img {
     background-image: url("/client/img/tutoringbackground.png");
-    background-size: contain;
+    background-size: 100% 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .faq-img {
-    background-image: url("/client/img/faqbackground.jpg");
-    background-size: auto;
+    background-image: url("/client/img/faqbackground.png");
+    background-size: 100% 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .meet-img {
-    background-image: url("/client/img/faqbackground.jpg");
-    background-size: auto;
+    background-image: url("/client/img/meetbackground.png");
+    background-size: 100% 100%;
     display: flex;
     align-items: center;
     justify-content: center;

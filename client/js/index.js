@@ -33,6 +33,7 @@ $(document).ready(
             $("#sessions").text(stats.sessions);
             $("#hours").text(stats.hours);
             $("#tutors").text(stats.tutors);
+            $("#students").text(stats.students);
         });
         $.get("/getFeed", data => {
             const feed = data;

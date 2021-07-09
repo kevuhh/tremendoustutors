@@ -84,5 +84,5 @@ app.get('/getFaqs', (req, res) => {
 	res.json(faqs);
 });
 
-serv.listen(2000);
+serv.listen(2200);
 console.log("Server started.");

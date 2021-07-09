@@ -1,11 +1,12 @@
 $(document).ready(() => {
     $("#stats-submit").click(() => {
         $("#error").css("display", "none");
-        const data = { sessions: $("#sessions").val(), hours: $("#hours").val(), tutors: $("#tutors").val() };
+        const data = { sessions: $("#sessions").val(), hours: $("#hours").val(), tutors: $("#tutors").val(), students: $("#students").val() };
         $.post("/stats", data, (data) => {
             $("#sessions").val("");
             $("#hours").val("");
             $("#tutors").val("");
+            $("#students").val("");
             if (data.status === "error") {
                 $("#error").css("display", "block");
             }
