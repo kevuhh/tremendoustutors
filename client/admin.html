@@ -16,7 +16,7 @@
         NEVER PUT DOUBLE QUOTES INSIDE YOUR PROPERTIES/VALUE DOUBLE QUOTES, BECAUSE THEY CONFUSE THE JSON FORMATTING. SINGLE QUOTES ARE FINE.
       </h2>
       <p>
-        For sessions, hours, and tutors just enter a number (no spaces or funky business, code is like that). <br>
+        For sessions, students, and tutors just enter a number (no spaces or funky business, code is like that). <br>
         Don't leave any fields blank, though.
       </p>
       <h4>
@@ -41,7 +41,6 @@
     </div>
     <form>
       <label>Sessions</label><input type="text" id="sessions" name="sessions"> <br>
-      <label>Hours</label><input type="text" id="hours" name="hours"> <br>
       <label>Tutors</label><input type="text" id="tutors" name="tutors"> <br>
       <label>Students</label><input type="text" id="students" name="students"> <br>
       <input type="button" id="stats-submit" value="Submit">
@@ -58,5 +57,10 @@
       <label>FAQs</label><textarea id="faqs" name="faqs" rows="20" cols="100"></textarea> <br>
       <input type="button" id="faqs-submit" value="Submit">
     </form>
+    <form action="/upload-file" method="post" enctype="multipart/form-data">
+      <input type="file" id="file-upload" name="avatar">
+      <input type="submit" id="file-submit" value="Submit">
+    </form>
+    
   </body>
 </html>

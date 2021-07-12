@@ -1,18 +1,53 @@
 const express = require('express');
 const app = express();
 const serv = require('http').Server(app);
+const cors = require('cors');
+const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/client/index.html');
 });
+
+app.use(fileUpload({
+    createParentPath: true
+}));
+
 app.use('/client', express.static(__dirname + '/client'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
+app.post('/upload-file', async (req, res) => {
+    try {
+        if(!req.files) {
+            res.send({
+                status: false,
+                message: 'No file uploaded'
+            });
+        } else {
+            //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
+            let avatar = req.files.avatar;
+            
+            //Use the mv() method to place the file in upload directory (i.e. "uploads")
+            avatar.mv('./client/img/tutors/' + avatar.name);
 
+            //send response
+            res.send({
+                status: true,
+                message: 'File is uploaded',
+                data: {
+                    name: avatar.name,
+                    mimetype: avatar.mimetype,
+                    size: avatar.size
+                }
+            });
+        }
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
 
 app.post('/stats', (req, res) => {
 	const data = req.body;
@@ -59,6 +94,7 @@ app.post('/faqs', (req, res) => {
 		}
 	});
 });
+
 
 app.get('/getStats', (req, res) => {
 	const rawdata = fs.readFileSync('./data/stats.json');

@@ -31,7 +31,6 @@ $(document).ready(
         $.get("/getStats", data => {
             const stats = data;
             $("#sessions").text(stats.sessions);
-            $("#hours").text(stats.hours);
             $("#tutors").text(stats.tutors);
             $("#students").text(stats.students);
         });
@@ -42,7 +41,7 @@ $(document).ready(
                 const { date, summary } = feed[i];
                 let eventHTML = `<div class="event">
                 <div class="label">
-                  <img src="/client/img/faqbackground.jpg">
+                  <img src="/client/img/favicon.png">
                 </div>
                 <div class="content">
                   <div class="date">
