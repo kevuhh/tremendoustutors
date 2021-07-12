@@ -32,9 +32,9 @@ app.post('/upload-file', async (req, res) => {
             
             //Use the mv() method to place the file in upload directory (i.e. "uploads")
             avatar.mv('./client/img/tutors/' + avatar.name);
-
+			res.redirect('./client/admin.html');
             //send response
-            res.send({
+            /*res.send({
                 status: true,
                 message: 'File is uploaded',
                 data: {
@@ -42,7 +42,7 @@ app.post('/upload-file', async (req, res) => {
                     mimetype: avatar.mimetype,
                     size: avatar.size
                 }
-            });
+            });*/
         }
     } catch (err) {
         res.status(500).send(err);
