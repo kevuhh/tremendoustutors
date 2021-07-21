@@ -41,7 +41,7 @@ $(document).ready(
                 const { date, summary } = feed[i];
                 let eventHTML = `<div class="event">
                 <div class="label">
-                  <img src="/client/img/favicon.png">
+                  <img src="/client/img/feedicon.png">
                 </div>
                 <div class="content">
                   <div class="date">
