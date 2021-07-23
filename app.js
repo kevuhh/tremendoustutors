@@ -120,5 +120,5 @@ app.get('/getFaqs', (req, res) => {
 	res.json(faqs);
 });
 
-serv.listen(2200);
+serv.listen(80);
 console.log("Server started.");
